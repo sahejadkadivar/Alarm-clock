@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(49deg, rgb(101, 101, 180), rgb(91, 203, 225));
+    height: 100vh;  /*To avoid repeatation of gradient */
+    color: white;
+}
+
+/* Header section */
+
+header {
+    height: 15vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    height: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, rgb(39, 150, 165), #556bcf 35%, rgb(255, 3, 3));
+    background-size: 200% auto;
+    -webkit-background-clip: text;  /* For WebKit browsers */
+    background-clip: text;  /* Standard property */
+    color: transparent;
+    animation: gradient 3s linear infinite;
+}
+
+/* Animation for header text */
+@keyframes gradient {
+    0% {
+        background-position: 0% 75%;
+    }
+
+    50% {
+        background-position: 100% 30%;
+    }
+
+    100% {
+        background-position: 0% 70%;
+    }
+}
+
+/* main section */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+.container {
+    width: 700px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 5%;
+    backdrop-filter: blur(40px) rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* local time */
+.current-time {
+    margin: 2rem;
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.current-time span {
+    font-size: 80px;
+    width: 80px;
+    text-align: center;
+    display: inline-block;
+    color: #564747;
+    position: relative;
+    font-family: "poppins";
+    padding: 10px;
+}
+
+.current-time span::after {
+    font-size: 16px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Adding heading/info below time */
+#cur-hour::after {
+    content: 'Hour';
+}
+
+#cur-minute::after {
+    content: 'Minutes';
+}
+
+#cur-second::after {
+    content: 'Seconds';
+}
+
+#cur-period::after {
+    content: 'Period';
+}
+
+
+/* Setting alarm */
+.set-alarm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alarm-box {
+    width: 70px;
+    height: 60px;
+    border: none;
+    border-radius: 20%;
+    padding: 10px;
+    margin: 0.2rem;
+    color: black;
+    font-size: 18px;
+}
+
+.set-alarm span {
+    font-size: 2em;
+}
+
+.period-box {
+    width: 80px;
+    height: 60px;
+    border: none;
+    border-radius: 20%;
+    padding: 10px;
+    margin: 0.2rem;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.set-alarm-btn {
+    width: 100px;
+    height: 60px;
+    border: none;
+    border-radius: 15%;
+    margin: 0.4rem;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button {
+    background-color: #007bff;
+    color: #d3d3d3;
+}
+
+/* hr tag style */
+hr {
+    border: 1px dotted #d3d3d3;
+}
+
+/* button hover effect */
+button:hover {
+    border-radius: 20%;
+    background-color: rgba(34, 127, 227, 0.8);
+    transition: border-radius 0.1s ease-in-out;
+}
+
+/* Display Alarm */
+
+.display-alarm {
+    text-align: start;
+    font-size: 1.5rem;
+    margin: 2px;
+    padding: 4px;
+}
+
+.display-alarm h2 {
+    margin-left: 2px;
+}
+
+#alarms-list li {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.11);
+    color: #fff;
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-top: 2px;
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    backdrop-filter: blur(20px) rgba(0, 0, 0, 0.2);
+}
+
+#alarms-list button {
+    float: right;
+    height: 50px;
+    width: 70px;
+    margin: 0px;
+    background-color: #007bff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#alarms-list button {
+    font-size: 0.55em;
+}
+
+#alarms-list button:hover {
+    background: #007bff56;
+    border-radius: 15px;
+    transition: border-radius 0.1s ease-in-out;
+}
+
+.display-alarm {
+    height: 33vh;
+    overflow: auto;
+}
+
+#alarms-list li span {
+    width: 9em;
+    text-align: right;
+}
+
+/* Respnsiveness for 486px and 786px screens */
+
+@media screen and (max-width:786px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        border-radius: 5%;
+    }
+
+    .current-time span {
+        width: 40px;
+        font-size: 40px;
+    }
+
+    .alarm-box {
+        width: 45px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .period-box {
+        height: 40px;
+        font-size: 14px;
+        width: auto;
+        padding: 3px;
+    }
+
+    #alarms-list li {
+        width: 100%;
+    }
+
+    #alarms-list button {
+        width: 60px;
+        height: 50px;
+    }
+
+    .set-alarm-btn {
+        height: 40px;
+        width: 70px;
+        font-size: 14px;
+    }
+
+    .current-time span::after {
+        font-size: 14px;
+        transform: translateX(0%);
+    }
+    
+}
+
+
+@media screen and (max-width:486px) {
+    html {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        border-radius: 5%;
+    }
+
+    .current-time span {
+        width: 30px;
+        font-size: 40px;
+    }
+
+    .alarm-box {
+        width: 42px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .period-box {
+        height: 30px;
+        font-size: 12px;
+        width: auto;
+        padding: 3px;
+    }
+
+    #alarms-list li {
+        width: 100%;
+    }
+
+    #alarms-list button {
+        width: 70px;
+        height: 50px;
+    }
+
+    .set-alarm-btn {
+        height: 30px;
+        width: 60px;
+        font-size: 12px;
+    }
+
+    .current-time span::after {
+        font-size: 12px;
+        transform: translateX(0%);
+    }
+}

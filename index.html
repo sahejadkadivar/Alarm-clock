@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="Icons/alarm-clock-favicon.ico">
+    <title>Alarm Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- This is header section to keep heading and clock photo -->
+    <header>
+        <h1>Alarm Clock &nbsp;</h1>
+        <img src="Icons/alarm-clock.svg" alt="alarm-clock-image">
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Clock Face -shows current time -->
+            <div id="cur-time" class="current-time">
+                <span id="cur-hour"></span>
+                <span id="cur-minute"></span>
+                <span id="cur-second"></span>
+                <span id="cur-period"></span>
+            </div>
+
+            <!-- Section for setting alarm -->
+            <hr/>
+            <div id="setAlarm" class="set-alarm">
+                <input type="number" id="alarm-hour" class="alarm-box" min="01" max="12" placeholder="Hr"
+                    required /><span>:</span>
+                <input type="number" id="alarm-minute" class="alarm-box" min="0" max="59" placeholder="Min"
+                    required /><span>:</span>
+                <input type="number" id="alarm-second" class="alarm-box" min="0" max="59" placeholder="Sec" required />
+                <select class="period-box" id="alarm-period-options">
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
+                <button type="submit" id="alarmSet" onclick="setAlarm()" class="set-alarm-btn">
+                    Set Alarm
+                </button>
+            </div>
+            <hr/>
+
+            <!-- Display Alarm -->
+            <div class="display-alarm">
+                <h2>Alarms ⏱️</h2>
+                <!-- Alarms List  -->
+                <ul id="alarms-list"></ul>
+            </div>
+
+        </div>
+    </main>
+    
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
