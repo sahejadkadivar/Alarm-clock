@@ -65,11 +65,12 @@ The project remains lightweight and self-contained by avoiding external librarie
 
 ## Demo
 
-below is link for trial
+link for trial is:
+[https://github.com/sahejadkadivar](https://sahejadkadivar.github.io/Alarm-clock/)
 
 
 
 ## Authors
 
-- [@sahejadkadivar](https://github.com/sahejadkadivar)
+- [sahejadkadivar](https://github.com/sahejadkadivar)
 
